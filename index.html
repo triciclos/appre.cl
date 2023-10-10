@@ -30,72 +30,144 @@
 	<link href="js/wow/animate.css" media="screen" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-		// Obtener el popup y el botón de cerrar
 		var popup;
 		var closeBtn;
-
+		var popupImage;
+	
 		window.addEventListener("DOMContentLoaded", (event) => {
 			popup = document.getElementById("popup");
 			closeBtn = document.getElementById("close");
-
-			// Mostrar el popup cuando se carga la página
+			popupImage = document.getElementById("popup-image");
+	
 			showPopup();
-		});
-
-		// Mostrar el popup
-		function showPopup() {
-			popup.style.display = "block";
-		}
-
-		// Ocultar el popup
-		function closePopup() {
-			popup.style.display = "none";
-		}
-
-		// Evento para cerrar el popup
-		function addCloseEventListener() {
+	
 			closeBtn.addEventListener("click", closePopup);
+	
+			popup.addEventListener("click", function(e) {
+				if (e.target === popup) {
+					closePopup();
+				}
+			});
+	
+			if (window.innerWidth <= 768) {
+				// Si es móvil
+				popupImage.src = "./img/popups/bilzypapbanner_MOBILE.png";
+				var downloadBtn = document.getElementById("download");
+				downloadBtn.addEventListener("click", closePopup);
+			} else {
+				// Si es PC
+				popupImage.src = "./img/popups/bilzypapbanner_PC.png";
+			}
+		});
+	
+		function showPopup() {
+			popup.classList.add("visible");
 		}
+	
+		function closePopup() {
+			console.log("Closing popup");
+			popup.classList.remove("visible");
+		}
+		
+		closeBtn.addEventListener("click", function() {
+			console.log("Close button clicked");
+			closePopup();
+		});
+		
+		popup.addEventListener("click", function(e) {
+			console.log("Popup clicked");
+			if (e.target === popup) {
+				closePopup();
+			}
+		});	
 	</script>
 	<style>
-		/* Estilos para el popup */
 		#popup {
 			display: none;
 			position: fixed;
+			align-items: center;
+			justify-content: center;
 			left: 0;
 			top: 0;
 			width: 100%;
 			height: 100%;
 			background-color: rgba(0, 0, 0, 0.7);
-			z-index: 1000;
+			z-index: 10000;
 		}
-
+		#popup.visible {
+			display: flex;
+		}
+		
 		#popup-content {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-color: #fff;
+			position: relative; 
+			width: 66%;
+			max-width: 1050px;
 			padding: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			background-color: white;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			text-align: center;
 		}
-
+		
 		#close {
+			position: absolute; 
+			top: 10px; 
+			right: 10px;
+			font-size: 18px;
 			cursor: pointer;
+			background-color: white;
+			border: none;
+			border-radius: 5px;
+			text-transform: uppercase;
+		}
+		#download {
+			display: none;
+			position: absolute;
+			bottom: -50px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 10px 20px;
+			background-color: #3B82F6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			text-transform: uppercase;
+		}
+		
+		@media only screen and (max-width: 768px) {
+			#popup-content {
+				width: 90%;
+				padding: 10px;
+			}
+		
+			#close {
+				font-size: 14px;
+			}
+		
+			#popup-image {
+				max-width: 100%;
+				height: auto;
+			}
+			#download {
+				display: block;
+			}
 		}
 	</style>
+	
+	
+	
 </head>
-
 <body>
 
-	<!-- Popup -->
 	<div id="popup">
-		<div id="popup-content">
-			<span id="close" onclick="addCloseEventListener()">Cerrar</span>
-			<img src="./img/popups/bilzypapbanner.png" alt="Imagen del popup">
-		</div>
-	</div>
-	</head>
+        <div id="popup-content">
+            <span id="close">Cerrar</span>
+            <img id="popup-image" src="" alt="Imagen del popup">
+			<button id="download">descargar app re</button>
+        </div>
+    </div>
+
 
 	<body>
 		<div class="primerdeco">
