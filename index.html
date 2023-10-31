@@ -30,25 +30,23 @@
 	<link href="js/wow/animate.css" media="screen" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-		var popup;
-		var closeBtn;
-		var popupImage;
-	
-		window.addEventListener("DOMContentLoaded", (event) => {
+		document.addEventListener("DOMContentLoaded", function() {
+			var popup;
+			var closeBtn;
+			var popupImage;
+			
 			popup = document.getElementById("popup");
 			closeBtn = document.getElementById("close");
 			popupImage = document.getElementById("popup-image");
-	
-			showPopup();
-	
+			
 			closeBtn.addEventListener("click", closePopup);
-	
+			
 			popup.addEventListener("click", function(e) {
 				if (e.target === popup) {
 					closePopup();
 				}
 			});
-	
+			
 			if (window.innerWidth <= 768) {
 				// Si es móvil
 				popupImage.src = "./img/popups/bilzypapbanner_MOBILE.png";
@@ -58,29 +56,20 @@
 				// Si es PC
 				popupImage.src = "./img/popups/bilzypapbanner_PC.png";
 			}
-		});
-	
-		function showPopup() {
-			popup.classList.add("visible");
-		}
-	
-		function closePopup() {
-			console.log("Closing popup");
-			popup.classList.remove("visible");
-		}
-		
-		closeBtn.addEventListener("click", function() {
-			console.log("Close button clicked");
-			closePopup();
-		});
-		
-		popup.addEventListener("click", function(e) {
-			console.log("Popup clicked");
-			if (e.target === popup) {
-				closePopup();
+			
+			showPopup();
+			
+			function showPopup() {
+				popup.classList.add("visible");
 			}
-		});	
+			
+			function closePopup() {
+				console.log("Closing popup");
+				popup.classList.remove("visible");
+			}
+		});
 	</script>
+	
 	<style>
 		#popup {
 			display: none;
