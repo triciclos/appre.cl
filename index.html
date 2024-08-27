@@ -2,668 +2,406 @@
 <html lang="en">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1K1PC6EYMC"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1K1PC6EYMC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1K1PC6EYMC');
+    </script>
+    <meta charset="UTF-8">
+    <title>App Re | Triciclos | La basura es un error de diseño</title>
+    <meta name="keywords" content="reciclaje, reciclaje chile, app de reciclaje chile, triciclos reciclaje, app de reciclaje, app reciclaje sodimac" />
+    <meta name="description" content="La App Re permite a los usuarios conocer del reciclaje, aprender cómo reciclar y dónde hacerlo. Visita nuestros puntos limpios alrededor de todo Chile.">
+    <meta name="author" content="@crisanch">
 
-		gtag('config', 'G-1K1PC6EYMC');
-	</script>
-	<meta charset="UTF-8">
-	<title>App Re | Triciclos | La basura es un error de diseño</title>
-	<meta name="keywords"
-		content="reciclaje, reciclaje chile,app de reciclaje chile,triciclos reciclaje, app de reciclaje, app reciclaje sodimac" />
-	<meta name="description"
-		content="La App Re permite a los usuarios cooncer del reciclaje, aprender como reciclar y donde hacerlo. Visita nuestros puntos limpios alrededor de todo Chile.">
-	<meta name="author" content="@crisanch">
+    <link href="css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/estilo.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="js/wow/animate.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="css/estilo.css" media="screen" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="js/slick/slick.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-		rel="stylesheet">
-	<link href="js/wow/animate.css" media="screen" rel="stylesheet" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var popup;
-			var closeBtn;
-			var popupImage;
-			
-			popup = document.getElementById("popup");
-			closeBtn = document.getElementById("close");
-			popupImage = document.getElementById("popup-image");
-			
-			closeBtn.addEventListener("click", closePopup);
-			
-			popup.addEventListener("click", function(e) {
-				if (e.target === popup) {
-					closePopup();
-				}
-			});
-			
-			if (window.innerWidth <= 768) {
-				// Si es móvil
-				popupImage.src = "./img/popups/bilzypapbanner_MOBILE.png";
-				var downloadBtn = document.getElementById("download");
-				downloadBtn.addEventListener("click", closePopup);
-			} else {
-				// Si es PC
-				popupImage.src = "./img/popups/bilzypapbanner_PC.png";
-			}
-			
-			showPopup();
-			
-			function showPopup() {
-				popup.classList.add("visible");
-			}
-			
-			function closePopup() {
-				console.log("Closing popup");
-				popup.classList.remove("visible");
-			}
-		});
-	</script>
-	
-	<style>
-		#popup {
-			display: none;
-			position: fixed;
-			align-items: center;
-			justify-content: center;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.7);
-			z-index: 10000;
-		}
-		#popup.visible {
-			display: flex;
-		}
-		
-		#popup-content {
-			position: relative; 
-			width: 30%;
-			max-width: 600px;
-			padding: 20px;
-			background-color: white;
-			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-			border-radius: 8px;
-			text-align: center;
-		}
-		
-		#close {
-			position: absolute; 
-			top: 10px; 
-			right: 10px;
-			font-size: 18px;
-			cursor: pointer;
-			background-color: white;
-			border: none;
-			border-radius: 5px;
-			text-transform: uppercase;
-		}
-		#download {
-			display: none;
-			position: absolute;
-			bottom: -50px;
-			left: 50%;
-			transform: translateX(-50%);
-			padding: 10px 20px;
-			background-color: #3B82F6;
-			color: white;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			text-transform: uppercase;
-		}
-		
-		@media only screen and (max-width: 768px) {
-			#popup-content {
-				width: 90%;
-				padding: 10px;
-			}
-		
-			#close {
-				font-size: 14px;
-			}
-		
-			#popup-image {
-				max-width: 100%;
-				height: auto;
-			}
-			#download {
-				display: block;
-			}
-		}
-	</style> -->
-	
-	
-	
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+        }
+
+        #popup.visible {
+            display: flex;
+        }
+
+        #popup-content {
+            position: relative;
+            width: 80%;
+            max-width: 700px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        #popup-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #popup-content {
+                width: 90%;
+                padding: 10px;
+            }
+
+            #close {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-	<!-- <div id="popup">
+    <div id="popup">
         <div id="popup-content">
             <span id="close">Cerrar</span>
             <img id="popup-image" src="" alt="Imagen del popup">
-			<button id="download">descargar app re</button>
         </div>
-    </div> -->
+    </div>
 
+    <div class="primerdeco">
+        <div class="center">
+            <header>
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.png" alt=""></a>
+                </div>
+                <a href="##" class="boton-expand-menu"></a>
+                <div class="menu">
+                    <a href="">Inicio</a>
+                    <a href="#prepara">Prepara Tu Visita</a>
+                    <a href="#registra_visita">Registra Tu visita</a>
+                    <a href="#escanea_productos">Escanea Tus Productos</a>
+                    <a href="https://triciclos.net/hable-con-nosotros/" target="_blank">¡Escríbenos!</a>
+                </div>
+            </header>
+        </div>
 
-	<body>
-		<div class="primerdeco">
-			<div class="center">
-				<header>
-					<div class="logo">
-						<a href="index.html"><img src="img/logo.png" alt=""> </a>
-					</div>
-					<a href="##" class="boton-expand-menu"></a>
-					<div class="menu">
-						<a href="">Inicio</a>
-						<a href="#prepara">Prepara Tu Visita</a>
-						<a href="#registra_visita">Registra Tu visita</a>
-						<a href="#escanea_productos">Escanea Tus Productos</a>
-						<a href="https://triciclos.net/hable-con-nosotros/" target="_blank">¡Escríbenos!</a>
-					</div>
-				</header>
-			</div>
+        <div class="portada">
+            <div class="center">
+                <div class="left wow fadeIn">
+                    <h2>Bienvenido a nuestra comunidad de reciclaje</h2>
+                    <p>¡Ahora es más fácil visitarnos, aprender de la reciclabilidad de los materiales y acceder a
+                        concursos y sorteos junto a nosotros!</p>
+                    <p>Registrate y valida tu ticket de visita escaneando el QR en tu punto limpio favorito. Y conoce la
+                        reciclabilidad de tus productos que consumes.</p>
 
-			<div class="portada">
-				<div class="center">
-					<div class="left wow fadeIn">
-						<h2>Bienvenido a nuestra comunidad de reciclaje</h2>
-						<p>¡Ahora es más fácil visitarnos, aprender de la reciclabilidad de los materiales y acceder a
-							concursos y sorteos junto a nosotros!</p>
-						<p>Registrate y valida tu ticket de visita escaneando el QR en tu punto limpio favorito. Y
-							conoce la
-							reciclabilidad de tus productos que consumes.</p>
+                    <div class="hashtag">
+                        <a href="#">#reciclaje</a>
+                        <a href="#">#AppRe</a>
+                        <a href="#">#economiacircular</a>
+                    </div>
+                    <div class="descarga-top">
+                        <h3>¿Aún no tienes la App Re?</h3>
+                        <div class="imges wow fadeInDown">
+                            <a href="https://play.google.com/store/apps/details?id=com.Triciclos.ReApp&hl=es_CL" target="_blank"><img src="img/app/1.png" alt="Google Play"></a>
+                            <a href="https://apps.apple.com/app/id1529547693" target="_blank"><img src="img/app/2.png" alt="Apple Store"></a>
+                            <a href="https://appgallery.huawei.com/app/C104882979" target="_blank"><img src="img/app/3.png" alt="App Gallery huawei"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right wow fadeInDown">
+                    <img src="img/mockup/1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="deco2"></div>
+    <div class="deco3"></div>
+    <div class="deco4"></div>
 
-						<div class="hashtag">
-							<a href="#">#reciclaje</a>
-							<a href="#">#AppRe</a>
-							<a href="#">#economiacircular</a>
-						</div>
-						<div class="descarga-top">
-							<h3>¿Aún no tienes la App Re?</h3>
-							<div class="imges wow fadeInDown">
-								<a href="https://play.google.com/store/apps/details?id=com.Triciclos.ReApp&hl=es_CL"
-									target="_blank"><img src="img/app/1.png" alt="Google Play"></a>
-								<a href="https://apps.apple.com/app/id1529547693" target="_blank"><img
-										src="img/app/2.png" alt="Apple Store"></a>
-								<a href="https://appgallery.huawei.com/app/C104882979" target="_blank"><img
-										src="img/app/3.png" alt="App Gallery huawei"></a>
-							</div>
-						</div>
-					</div>
-					<div class="right wow fadeInDown">
-						<img src="img/mockup/1.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="deco2"></div>
-		<div class="deco3"></div>
-		<div class="deco4"></div>
+    <div class="numeros">
+        <div class="center">
+            <div class="row">
+                <div class="col-4">
+                    <div class="datobox bri">
+                        <span class="grande">232,4K</span>
+                        <span class="chico">Tickets/Visitas generados</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="datobox bri">
+                        <span class="grande">53,5K</span>
+                        <span class="chico">Usuarios registrados</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="datobox bri">
+                        <span class="grande">22</span>
+                        <span class="chico">Puntos de reciclaje</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="datobox bri">
+                        <span class="grande">4.500</span>
+                        <span class="chico">Productos registrados</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="datobox">
+                        <span class="grande">44.879,4K <span class="kg">kg</span></span>
+                        <span class="chico">Kilos de material recuperados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="registrate">
+        <div class="center">
+            <div class="left wow fadeInDown">
+                <img src="img/mockup/2.png" alt="">
+            </div>
+            <div class="right fadeIn wow">
+                <h2>Regístrate</h2>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/1.png" alt="">Ingresa tu correo electrónico y una contraseña.</p>
+                </div>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/2.png" alt="">Selecciona el Punto Limpio donde quieres reciclar.</p>
+                </div>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/3.png" alt="">¡Todo listo, ya eres parte de la comunidad!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<div class="numeros">
-			<div class="center">
-				<div class="row">
-					<div class="col-4">
-						<div class="datobox bri">
-							<span class="grande">232,4K</span>
-							<span class="chico">Tickets/Visitas generados</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="datobox bri">
-							<span class="grande">53,5K</span>
-							<span class="chico">Usuarios registrados</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="datobox bri">
-							<span class="grande">22</span>
-							<span class="chico">Puntos de reciclaje</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="datobox bri">
-							<span class="grande">4.500</span>
-							<span class="chico">Productos registrados</span>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="datobox">
-							<span class="grande">44.879,4K <span class="kg">kg</span></span>
-							<span class="chico">Kilos de material recuperados</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="registrate">
-			<div class="center">
-				<div class="left wow fadeInDown">
-					<img src="img/mockup/2.png" alt="">
-				</div>
-				<div class="right  fadeIn wow">
-					<h2>Regístrate</h2>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/1.png" alt="">Ingresa tu correo electrónico y una
-							contraseña.</p>
-					</div>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/2.png" alt="">Selecciona el Punto Limpio donde quieres
-							reciclar.</p>
-					</div>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/3.png" alt="">¡Todo listo, ya eres parte de la
-							comunidad!
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="prepara" id="prepara">
+        <div class="center">
+            <div class="left fadeIn wow">
+                <h2>Prepara tu visita</h2>
+                <p>Ve a la sección de informaciones 💡 y conoce todos los materiales que recibimos, como identificarlos y cuáles no recibimos.</p>
+                <p>¡Así evitas llevarte de vuelta algunos materiales!</p>
+            </div>
+            <div class="right wow fadeInDown">
+                <img src="img/mockup/3.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="valida" id="registra_visita">
+        <div class="center">
+            <h2>Registra tu visita leyendo el QR</h2>
+            <div class="left wow fadeInDown">
+                <img src="img/mockup/4.png" alt="">
+            </div>
+            <div class="right">
 
-		<div class="prepara" id="prepara">
-			<div class="center">
-				<div class="left fadeIn wow">
-					<h2>Prepara tu visita</h2>
-					<p>Ve a la sección de informaciones 💡 y conoce todos los materiales que recibimos, como
-						identificarlos
-						y cuales no recibimos.</p>
-					<p>¡Así evitas llevarte devuelta algunos materiales!</p>
-				</div>
-				<div class="right wow fadeInDown">
-					<img src="img/mockup/3.png" alt="">
-				</div>
-			</div>
-		</div>
-		<div class="valida" id="registra_visita">
-			<div class="center">
-				<h2>Registra tu visita leyendo el QR</h2>
-				<div class="left wow fadeInDown">
-					<img src="img/mockup/4.png" alt="">
-				</div>
-				<div class="right">
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/6.png" alt=""><span>Una vez en tu centro de reciclaje favorito, encuentra y escanea el QR del tótem.</span></p>
+                </div>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/4.png" alt=""><span>Selecciona Auto validar ticket en la App.</span></p>
+                </div>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/3.png" alt=""><span>¡Y listo, ya se ha registrado tu visita!</span></p>
+                </div>
+                <div class="info">
+                    <p><img class="icon-fix" src="img/iconos/5.png" alt=""><span>Si traes todo bien separado, en menos de 10 minutos estarás afuera.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sera" id="escanea_productos">
+        <div class="center">
+            <h2 class="fadeInDown wow">¿Mi producto será reciclable o no? 🤔</h2>
+            <p class="plomillo fadeInDown wow">Puedes estar en tu casa, supermercado o Punto Limpio y saber la materialidad de tus productos que consumes y dónde poder dejarlo.
+                La App Re te ayuda a resolver dudas sobre la reciclabilidad de los residuos en 2 simples pasos.</p>
+            <div class="pasos">
+                <div class="paso1 fadeInLeft wow">
+                    <span class="titulo">PASO 1</span>
+                    <p>Escanear el código de barras</p>
+                </div>
+                <div class="paso2 fadeInRight wow">
+                    <span class="titulo">PASO 2</span>
+                    <p>Verificar a qué material corresponde y si es posible recibirlo y ser reciclado en los puntos limpios.</p>
+                </div>
+                <img class="central wow fadeInDown" src="img/mockup/5.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="prepara">
+        <div class="center">
+            <div class="left fadeIn wow">
+                <div class="starss">
+                    <img src="img/estars.png" alt="">
+                </div>
+                <h2>Califica tu experiencia</h2>
+                <p>¡Tu opinión es muy importante para que podamos seguir mejorando!</p>
+                <p>Déjanos tu opinión desde la App cada vez que vayas a un Punto Limpio y en App Store o Play Store después de que hayas utilizado la App Re.</p>
 
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/6.png" alt=""><span>Una vez en tu centro de reciclaje
-								favorito, encuentra y escanea el QR del totem.</span></p>
-					</div>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/4.png" alt=""><span>Selecciona Auto validar ticket en
-								la
-								App.</span></p>
-					</div>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/3.png" alt=""><span>¡Y listo, ya se ha registrado tu
-								visita!</span></p>
-					</div>
-					<div class="info">
-						<p><img class="icon-fix" src="img/iconos/5.png" alt=""><span>Si traes todo bien separado, en
-								menos
-								de 10 minutos estarás afuera.</span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="sera" id="escanea_productos">
-			<div class="center">
-				<h2 class=" fadeInDown wow">¿Mi producto será reciclable o no? 🤔</h2>
-				<p class="plomillo  fadeInDown wow">Puedes estar en tu casa, supermercado o Punto Limpio y saber la
-					materialidad de tus productos que consumes y donde poder dejarlo.
-					La App Re te ayuda a resolver dudas sobre la reciclabilidad de los
-					residuos en 2 simples pasos.</p>
-				<div class="pasos">
-					<div class="paso1 fadeInLeft wow">
-						<span class="titulo ">PASO 1</span>
-						<p>Escanear el código de barras</p>
-					</div>
-					<div class="paso2 fadeInRight wow">
-						<span class="titulo">PASO 2</span>
-						<p>Verificar a qué material corresponde y si es posible recibirlo y ser reciclado en los puntos
-							limpios.</p>
-					</div>
-					<img class="central wow fadeInDown" src="img/mockup/5.png" alt="">
-				</div>
-			</div>
-		</div>
-		<div class="prepara">
-			<div class="center">
-				<div class="left fadeIn wow">
-					<div class="starss">
-						<img src="img/estars.png" alt="">
-					</div>
-					<h2>Califica tu experiencia</h2>
-					<p>¡Tu opinión es muy importante para que podamos seguir mejorando!</p>
-					<p>Déjanos tu opinión desde la App cada vez que vayas a un Punto Limpio y en App Store o Play Store
-						después de que hayas utilizado la App Re.</p>
+            </div>
+            <div class="right">
+                <div class="wow fadeInDown puntuacion"><img src="img/mockup/6.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="sigamos">
+        <div class="center">
+            <h2>¡Sigamos cuidándonos!</h2>
+            <div class="info fadeIn wow">
+                <div class="pasos">
+                    <img class="icon-fix" src="img/iconos/7.png" alt="">
+                    <span class="azul">Paso 1:</span>
+                    <p style="vertical-align: middle;">Toma tu temperatura.</p>
+                </div>
+                <div class="pasos">
+                    <img class="icon-fix" src="img/iconos/8.png" alt="">
+                    <span class="azul">Paso 2:</span>
+                    <p style="vertical-align: middle;">Ubica los residuos en los carros para organizar tu reciclaje.</p>
+                </div>
+                <div class="pasos">
+                    <img class="icon-fix" src="img/iconos/9.png" alt="">
+                    <span class="azul">Paso 3:</span>
+                    <p style="vertical-align: middle;">Deposita tus materiales en las bocas.</p>
+                </div>
+                <div class="pasos">
+                    <img class="icon-fix" src="img/iconos/10.png" alt="">
+                    <span class="azul">Paso 4:</span>
+                    <p style="vertical-align: middle;">¡Sanitiza tus manos!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="marcas">
+        <div class="center">
+            <h2 class="fadeInDown wow">YA SON PARTE DE LA APP RE</h2>
+            <div class="conjunto fadeInDown wow">
+                <img src="img/marcas/3C.jpg" alt="">
+                <img src="img/marcas/CMP.jpg" alt="">
+                <img src="img/marcas/LA_CRIANZA.jpg" alt="">
+                <img src="img/marcas/SODIMAC.jpg" alt="">
+                <img src="img/marcas/UDD.jpg" alt="">
+                <img src="img/marcas/WALMART.jpg" alt="">
+                <img src="img/marcas/ZAPALLAR.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="pie">
+        <div class="center">
+            <div class="logos-pie">
+                <a href="https://play.google.com/store/apps/details?id=com.Triciclos.ReApp&hl=es_CL" target="_blank"><img src="img/app/1.png" alt=""></a>
+                <a href="https://apps.apple.com/app/id1529547693" target="_blank"><img src="img/app/2.png" alt=""></a>
+                <a href="https://appgallery.huawei.com/app/C104882979" target="_blank"><img src="img/app/3.png" alt=""></a>
+            </div>
+            <div class="menu-footer">
+                <a href="https://www.instagram.com/app.re/" target="_blank">@app.re</a>
+                <a href="https://www.instagram.com/triciclosb/" target="_blank">@triciclosb</a>
+            </div>
+            <div class="logo-triciclos">
+                <a href="https://triciclos.net/" target="_blank"><img src="img/3C.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="piepie">
+        <p>Copyright 2022 All right reserved by triciclos</p>
+    </div>
 
-				</div>
-				<div class="right">
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script src="js/slick/slick.js"></script>
+    <script src="js/wow/wow.js"></script>
+    <script>
+        $('.slidercard').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            dots: false,
+            arrows: false,
+            infinite: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
 
-					<div class="wow fadeInDown puntuacion"><img src="img/mockup/6.png" alt=""></div>
-				</div>
-			</div>
-		</div>
-		<div class="sigamos">
-			<div class="center">
-				<h2>¡Sigamos cuidándonos!</h2>
-				<div class="info  fadeIn wow">
-					<div class="pasos">
-						<img class="icon-fix" src="img/iconos/7.png" alt="">
-						<span class="azul">Paso 1:</span>
-						<p style="vertical-align: middle;">Toma tu temperatura.</p>
-					</div>
-					<div class="pasos">
-						<img class="icon-fix" src="img/iconos/8.png" alt="">
-						<span class="azul">Paso 2:</span>
-						<p style="vertical-align: middle;">Ubica los residuos en los carros para organizar tu reciclaje.
-						</p>
-					</div>
-					<div class="pasos">
-						<img class="icon-fix" src="img/iconos/9.png" alt="">
-						<span class="azul">Paso 3:</span>
-						<p style="vertical-align: middle;">Deposita tus materiales en las bocas.</p>
-					</div>
-					<div class="pasos">
-						<img class="icon-fix" src="img/iconos/10.png" alt="">
-						<span class="azul">Paso 4:</span>
-						<p style="vertical-align: middle;">¡Sanitiza tus manos!</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="marcas">
-			<div class="center">
-				<h2 class="fadeInDown wow">YA SON PARTE DE LA APP RE</h2>
-				<div class="conjunto  fadeInDown wow">
-					<img src="img/marcas/3C.jpg" alt="">
-					<img src="img/marcas/CMP.jpg" alt="">
-					<img src="img/marcas/LA_CRIANZA.jpg" alt="">
-					<img src="img/marcas/SODIMAC.jpg" alt="">
-					<img src="img/marcas/UDD.jpg" alt="">
-					<img src="img/marcas/WALMART.jpg" alt="">
-					<img src="img/marcas/ZAPALLAR.jpg" alt="">
-				</div>
-			</div>
-		</div>
-		<!-- <div class="comentarios">
-		<div class="center">
-			<div class="fix">
-				<h2>Comentarios</h2>
-				<div class="slidercard">
-					<div class="card">
-						<div class="nombre">Victoria</div>
-						<span class="bajada">Punto Limpio Sodimac Cerrillos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Me gusto mucho la nueva forma. Lo encontré más ordenado que
-								cuando iba un fin de semana antes de la cuarentena. Donde había
-								mucha gente.</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
+        $(".boton-expand-menu").click(function () {
+            if ($(".menu").hasClass("open")) {
+                $(".menu").removeClass("open");
+            } else {
+                $(".menu").addClass("open");
+            }
+            if ($(this).hasClass("open")) {
+                $(this).removeClass("open");
+            } else {
+                $(this).addClass("open");
+            }
+        });
 
-					<div class="card">
-						<div class="nombre">Nacho</div>
-						<span class="bajada">Punto Limpio Sodimac Los Domínicos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-								reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
+        new WOW().init();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popup = document.getElementById("popup");
+            var closeBtn = document.getElementById("close");
+            var popupImage = document.getElementById("popup-image");
 
-					<div class="card">
-						<div class="nombre">Carlos</div>
-						<span class="bajada">Punto Limpio Sodimac Los Domínicos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi .</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
+            function redirectToInstagram() {
+                window.location.href = "https://www.instagram.com/triciclosb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+            }
 
-					<div class="card">
-						<div class="nombre">Carlos</div>
-						<span class="bajada">Punto Limpio Sodimac Los Domínicos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Muy buen servicio, operadores y lugar impecables!</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
+            closeBtn.addEventListener("click", redirectToInstagram);
 
-					<div class="card">
-						<div class="nombre">Carlos</div>
-						<span class="bajada">Punto Limpio Sodimac Los Domínicos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Muy buen servicio, operadores y lugar impecables!</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
+            popup.addEventListener("click", function (e) {
+                if (e.target === popup || e.target === popupImage) {
+                    redirectToInstagram();
+                }
+            });
 
-					<div class="card">
-						<div class="nombre">Carlos</div>
-						<span class="bajada">Punto Limpio Sodimac Los Domínicos</span>
-						<div class="trespuntos">
-							<span class="punto"></span>
-							<span class="punto"></span>
-							<span class="punto"></span>
-						</div>
-						<div class="comentario-box">
-							<p>Muy buen servicio, operadores y lugar impecables!</p>
-						</div>
-						<div class="estrellitas">
-							<div class="star">
-								<div class="valoracion">
-									<input id="radio1" type="radio" name="estrellas" value="5">
-									<label for="radio1">★</label>
-									<input id="radio2" type="radio" name="estrellas" value="4">
-									<label for="radio2">★</label>
-									<label for="radio3">★</label>
-									<input id="radio4" type="radio" name="estrellas" value="2">
-									<label for="radio4">★</label>
-									<input id="radio5" type="radio" name="estrellas" value="1">
-									<label for="radio5">★</label>
-								</div>
-							</div>
-						</div>
-						<div class="fecha">Viernes 28 Agosto 2020</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            if (window.innerWidth <= 768) {
+                popupImage.src = "./img/popups/bilzypapbanner_MOBILE.png";
+            } else {
+                popupImage.src = "./img/popups/bilzypapbanner_PC.png";
+            }
 
-	</div> -->
-		<div class="pie">
-			<div class="center">
-				<div class="logos-pie">
-					<a href="https://play.google.com/store/apps/details?id=com.Triciclos.ReApp&hl=es_CL"
-						target="_blank"><img src="img/app/1.png" alt=""></a>
-					<a href="https://apps.apple.com/app/id1529547693" target="_blank"><img src="img/app/2.png"
-							alt=""></a>
-					<a href="https://appgallery.huawei.com/app/C104882979" target="_blank"><img src="img/app/3.png"
-							alt=""></a>
-				</div>
-				<div class="menu-footer">
-					<a href="https://www.instagram.com/app.re/" target="_blank">@app.re</a>
-					<a href="https://www.instagram.com/triciclosb/" target="_blank">@triciclosb</a>
-				</div>
-				<div class="logo-triciclos">
-					<a href="https://triciclos.net/" target="_blank"> <img src="img/3C.jpg" alt=""> </a>
-				</div>
-			</div>
-		</div>
-		<div class="piepie">
-			<p>Copyright 2022 All right reserved by triciclos</p>
-		</div>
-
-		<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
-		<script src="js/slick/slick.js"></script>
-		<script src="js/wow/wow.js"></script>
-		<script>
-
-			$('.slidercard').slick({
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				autoplay: true,
-				dots: false,
-				arrows: false,
-				infinite: true,
-				autoplaySpeed: 2000,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 1
-						}
-					},
-					{
-						breakpoint: 500,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-
-						}
-					}
-				]
-			});
-
-
-
-			$(".boton-expand-menu").click(function () {
-				if ($(".menu").hasClass("open")) {
-					$(".menu").removeClass("open");
-				} else {
-					$(".menu").addClass("open");
-				}
-				if ($(this).hasClass("open")) {
-					$(this).removeClass("open");
-				} else {
-					$(this).addClass("open");
-				}
-			});
-
-			new WOW().init();
-
-
-
-
-
-		</script>
-	</body>
+            popup.classList.add("visible");
+        });
+    </script>
+</body>
 
 </html>
