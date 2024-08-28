@@ -381,15 +381,15 @@
             var closeBtn = document.getElementById("close");
             var popupImage = document.getElementById("popup-image");
 
-            function redirectToInstagram() {
-                window.location.href = "https://www.instagram.com/triciclosb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+            function closePopup() {
+                popup.classList.remove("visible");
             }
 
-            closeBtn.addEventListener("click", redirectToInstagram);
+            closeBtn.addEventListener("click", closePopup);
 
             popup.addEventListener("click", function (e) {
-                if (e.target === popup || e.target === popupImage) {
-                    redirectToInstagram();
+                if (e.target === popup || e.target === popupImage || e.target === closeBtn) {
+                    closePopup();
                 }
             });
 
